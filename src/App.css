@@ -119,3 +119,19 @@ input{
   font-size: larger;
   height: 30px;
 }
+
+
+h3, h6 {
+  margin-left: 200px;
+  margin-bottom:25px;
+}
+
+.remove{
+  transition: 200ms ease-in;
+}
+
+.remove:hover{
+  scale:1.1;
+  background-color: inherit;
+  color: darkgray;
+}

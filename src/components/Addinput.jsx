@@ -5,6 +5,10 @@ export default function Addinput() {
   const inputTitle = useRef("");
   const inputDescription = useRef("");
   const [data, setData] = useState([]);
+  const removeElement = (index) => {
+    const newData = data.filter((_, i) => i !== index);
+    setData(newData);
+  };
 
   return (
     <div className="">
@@ -42,12 +46,17 @@ export default function Addinput() {
           <FaPlus />
         </button>
       </div>
-      <div className="preview grid grid-cols-5 h-full w-full">
+      <div className="preview grid grid-cols-3 w-full">
           {data && data.length>0 ? data.map((value, index)=>{
             return(
               <div key={index}>
-                
-              <h2>{value.title}</h2>
+                <button className="remove" onClick={() => {
+                  data.map(()=>{ removeElement(index)});
+                }}>
+              <h3>{value.title}</h3>
+              <h6>{value.description}</h6>
+              </button>
+              
               </div>
             )
           }): "No ToDo"}

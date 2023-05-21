@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { FaMoon } from 'react-icons/fa';
 
 function Dark({childToParent}) {
 const [theme, setTheme] = useState('light');
